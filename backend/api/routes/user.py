@@ -2,11 +2,11 @@ from fastapi import APIRouter, Depends
 import httpx
 from pydantic import BaseModel
 from sqlalchemy.ext.asyncio import AsyncSession
-from backend.app.db.database import get_db, dev_seetable, add_user
+from app.db.database import get_db, dev_seetable, add_user
 router = APIRouter()
 
 class User(BaseModel):
-    id: int
+    id: int | None = None
     username: str
 
 @router.post("/users/register")

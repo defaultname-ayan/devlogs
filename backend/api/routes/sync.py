@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 import httpx
 from pydantic import BaseModel
-from backend.app.db.database import fetch_user_stats, sync_user_events, get_user_by_username
+from app.db.database import fetch_user_stats, sync_user_events, get_user_by_username
 from apscheduler.schedulers.background import BackgroundScheduler
 
 scehduler = BackgroundScheduler()

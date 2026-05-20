@@ -2,6 +2,7 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 from .models import user, event, metadata
+from sqlalchemy.dialects.postgresql import insert as pg_insert
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.orm import sessionmaker
 from datetime import datetime
@@ -36,7 +37,9 @@ async def get_db():
 
 async def add_user(github_username: str):
     async with async_session() as session:
-        query = user.insert().values(github_username=github_username)
+        query = pg_insert(user).values(github_username=github_username).on_conflict_do_nothing(
+            index_elements=["github_username"]
+        )
         await session.execute(query)
         await session.commit()
 

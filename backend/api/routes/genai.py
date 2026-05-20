@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 import os
 from pathlib import Path
 
-from backend.app.db.database import fetch_user_stats
+from app.db.database import fetch_user_stats
 
 router = APIRouter()
 

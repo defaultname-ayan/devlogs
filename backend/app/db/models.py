@@ -15,6 +15,7 @@ event = sa.Table(
     'events',
     metadata,
     sa.Column('id', sa.Integer, primary_key=True, index=True),
+    sa.Column('event_id', sa.String, unique=True, nullable=False),  
     sa.Column('user_id', sa.Integer, sa.ForeignKey('users.id'), nullable=False),
     sa.Column('event_type', sa.String, nullable=False),
     sa.Column('repo_name', sa.String, nullable=False),

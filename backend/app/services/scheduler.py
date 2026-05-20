@@ -1,7 +1,7 @@
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 import httpx
 
-from backend.app.db.database import (
+from app.db.database import (
     see_users,
     get_user_by_username,
     sync_user_events,
