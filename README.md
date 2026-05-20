@@ -369,6 +369,6 @@ MIT License.
 
 # 👨‍💻 Author
 
-Built by **Ayaan**.
+Built by **Ayan**.
 
 If you found this project interesting, feel free to star the repository ⭐
